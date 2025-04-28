@@ -1,0 +1,470 @@
+/* Reset some default styles */
+body, h1, h2, h3, h4, p, ul, ol, li, table, form, .comment-box {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #555; /* Darker gray for softer feel */
+    background-color: #fce4ec; /* Light pink background */
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    grid-area: header;
+    background-color: #f8bbd0; /* Slightly darker pink */
+    padding: 15px; /* Reduced padding for smaller screens */
+    text-align: center;
+    border-bottom: 3px solid #e91e63; /* Brighter pink accent */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column; /* Stack logo and title on smaller screens */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.header-content .logo {
+    margin-right: 0; /* No right margin when stacked */
+    margin-bottom: 5px; /* Space between logo and title */
+    width: 40px; /* Slightly smaller logo */
+    height: 40px;
+    border-radius: 50%; /* Make the logo circular */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8em; /* Smaller heading for iPhones */
+    margin-bottom: 3px;
+    color: #e91e63; /* Brighter pink for the main title */
+    line-height: 1.2; /* Improve line height for smaller text */
+}
+
+header .tagline {
+    font-style: italic;
+    color: #888;
+    font-size: 0.9em; /* Smaller tagline */
+    margin-bottom: 8px;
+}
+
+header h3 {
+    font-size: 1.1em; /* Smaller contents heading */
+    color: #e91e63;
+    margin-top: 10px;
+}
+
+/* Navigation Styling */
+nav {
+    grid-area: nav;
+    background-color: #d898bc; /* Light orange/peach */
+    padding: 10px; /* Reduced padding */
+    text-align: center;
+    border-top: 1px solid #ff4ded; /* Thinner borders */
+    border-bottom: 1px solid #f4e4ee;
+    margin-bottom: 0;
+    border-radius: 15px; /* Slightly less rounded */
+}
+
+nav ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack links for better iPhone fit */
+    align-items: stretch; /* Make links take full width */
+}
+
+nav li {
+    margin: 8px 0; /* Adjust vertical spacing */
+}
+
+nav a {
+    color: #a23966; /* Burnt orange */
+    font-weight: bold;
+    font-size: 1em; /* Slightly smaller nav links */
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+    display: block; /* Make the entire li clickable */
+    padding: 8px 0; /* Add some padding to the link text */
+}
+
+nav a:hover {
+    color: #ff43d6; /* Lighter orange on hover */
+    text-decoration: none; /* Remove underline for a cleaner look */
+    background-color: lightblue; /* Changed hover background color to light blue */
+}
+
+/* Main Content Styling */
+main {
+    grid-area: main;
+    padding: 15px; /* Reduced padding */
+}
+
+section {
+    margin-bottom: 15px; /* Reduced margin */
+    padding: 15px; /* Reduced padding */
+    background-color: #fff8e1; /* Light yellow/cream */
+    border: 1px solid #ffecb3; /* Thinner border */
+    border-radius: 10px; /* Slightly less rounded */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05); /* Softer shadow */
+}
+
+h2 {
+    font-size: 1.8em; /* Smaller subheading */
+    margin-bottom: 12px;
+    color: #e91e63; /* Brighter pink for subheadings */
+    border-bottom: 2px dotted #f48fb1; /* Thinner dotted border */
+    padding-bottom: 6px;
+}
+
+h3 {
+    font-size: 1.4em; /* Smaller h3 */
+    margin-bottom: 10px;
+    color: #f06292; /* Another shade of pink */
+}
+
+h4 {
+    font-size: 1.1em; /* Smaller h4 */
+    margin-top: 12px;
+    margin-bottom: 8px;
+    color: #f8bbd0; /* Lighter pink for smaller headings */
+}
+
+p {
+    margin-bottom: 10px; /* Reduced margin */
+    color: #666; /* Slightly lighter gray */
+    font-size: 0.95em; /* Slightly smaller paragraph text */
+}
+
+a {
+    color: #ff4081; /* Another bright pink */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #f06292;
+}
+
+ul, ol {
+    margin-bottom: 10px; /* Reduced margin */
+    padding-left: 20px; /* Less indent */
+    list-style-type: square; /* Square bullet points */
+}
+
+li {
+    margin-bottom: 6px; /* Reduced margin */
+    font-size: 0.95em; /* Slightly smaller list text */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px; /* Reduced margin */
+    border: 1px solid #f48fb1; /* Thinner border */
+    border-radius: 8px; /* Less rounded */
+    overflow: auto; /* Enable horizontal scrolling for tables on small screens */
+}
+
+th, td {
+    border: 1px solid #f8bbd0; /* Thinner cell borders */
+    padding: 8px; /* Reduced padding */
+    text-align: left;
+    font-size: 0.9em; /* Smaller table text */
+}
+
+th {
+    background-color: #f48fb1; /* Pink background for table headers */
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fce4ec; /* Light pink for even rows */
+}
+
+/* Form Styling */
+form {
+    margin-bottom: 15px; /* Reduced margin */
+    padding: 10px; /* Reduced padding */
+    background-color: #ffebee; /* Very light pink for forms */
+    border: 1px solid #f8bbd0; /* Thinner border */
+    border-radius: 8px; /* Less rounded */
+}
+
+form table {
+    width: 100%; /* Make form table full width on mobile */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px; /* Reduced margin */
+    color: #e91e63; /* Brighter pink for labels */
+    font-weight: bold;
+    font-size: 0.9em; /* Smaller label text */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form select {
+    width: calc(100% - 10px); /* Adjust width for padding */
+    max-width: 100%; /* Full width on mobile */
+    padding: 8px; /* Reduced padding */
+    border: 1px solid #f48fb1; /* Thinner border */
+    border-radius: 6px; /* Less rounded */
+    margin-bottom: 10px; /* Reduced margin */
+    box-sizing: border-box;
+    font-size: 0.85em; /* Smaller input text */
+}
+
+form input[type="radio"] {
+    margin-right: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #ff4081; /* Bright pink submit button */
+    color: white;
+    border: none;
+    padding: 8px 15px; /* Reduced padding */
+    border-radius: 6px; /* Less rounded */
+    cursor: pointer;
+    font-size: 0.9em; /* Smaller button text */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #f06292; /* Darker pink on hover */
+}
+
+/* Comment Box Styling */
+.comment-box {
+    width: 95%; /* Wider on smaller screens */
+    max-width: none; /* Remove max-width for full width */
+    border: 1px solid #f48fb1; /* Thinner border */
+    padding: 10px; /* Reduced padding */
+    margin: 15px auto; /* Reduced margin */
+    border-radius: 8px; /* Less rounded */
+    background-color: #ffebee; /* Very light pink for comment box */
+}
+
+.comment-box textarea {
+    width: 100%;
+    height: 100px; /* Slightly smaller textarea */
+    margin-bottom: 10px; /* Reduced margin */
+    border: 1px solid #f8bbd0; /* Thinner border */
+    border-radius: 6px;
+    padding: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 0.85em; /* Smaller textarea text */
+}
+
+.comment-box button {
+    background-color: #ff4081; /* Bright pink button */
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Reduced padding */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em; /* Smaller button text */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.comment-box button:hover {
+    background-color: #f06292; /* Darker pink on hover */
+}
+
+/* Footer Styling */
+footer {
+    grid-area: footer;
+    background-color: #ff4081; /* Slightly darker pink */
+    padding: 15px; /* Reduced padding */
+    text-align: center;
+    font-size: 0.9em; /* Smaller footer text */
+    color: white; /* White text on the footer */
+    border-top: 2px solid #e91e63; /* Thinner top border */
+}
+
+footer a {
+    color:#ff4081; /* Slightly darker pink */
+    margin: 0 8px; /* Reduced margin */
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9em; /* Smaller footer link text */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fce4ec; /* Light pink on hover */
+    text-decoration: underline;
+}
+
+/* Media Queries */
+
+/* Default styles for smaller screens (including iPhones) - Apply these directly */
+
+/* Tablet (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+    }
+
+    nav {
+        border-radius: 20px; /* Slightly more rounded on tablet */
+    }
+
+    nav ol {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0 12px; /* Adjust spacing for tablet */
+    }
+
+    nav a {
+        font-size: 1.05em; /* Slightly larger on tablet */
+        padding: 6px 0;
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust for tablet */
+    }
+
+    h2 {
+        font-size: 1.7em; /* Adjust for tablet */
+    }
+
+    section {
+        padding: 20px; /* Adjust padding for tablet */
+        margin-bottom: 20px; /* Adjust margin for tablet */
+        border-radius: 12px; /* Slightly more rounded on tablet */
+    }
+
+    table {
+        border-radius: 10px; /* Adjust for tablet */
+    }
+
+    th, td {
+        padding: 10px; /* Adjust padding for tablet */
+        font-size: 0.95em; /* Adjust font size for tablet */
+    }
+
+    form {
+        border-radius: 10px; /* Adjust for tablet */
+        padding: 12px; /* Adjust padding for tablet */
+    }
+
+    form label {
+        font-size: 0.95em; /* Adjust for tablet */
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="date"],
+    form select {
+        font-size: 0.9em; /* Adjust for tablet */
+        border-radius: 8px; /* Adjust for tablet */
+        padding: 10px; /* Adjust for tablet */
+    }
+
+    form input[type="submit"] {
+        font-size: 0.95em; /* Adjust for tablet */
+        border-radius: 8px; /* Adjust for tablet */
+        padding: 10px 18px; /* Adjust padding for tablet */
+    }
+
+    .comment-box {
+        border-radius: 10px; /* Adjust for tablet */
+        padding: 12px; /* Adjust padding for tablet */
+    }
+
+    .comment-box textarea {
+        font-size: 0.9em; /* Adjust for tablet */
+        border-radius: 8px; /* Adjust for tablet */
+    }
+
+    .comment-box button {
+        font-size: 0.95em; /* Adjust for tablet */
+        border-radius: 8px; /* Adjust for tablet */
+        padding: 10px 15px; /* Adjust padding for tablet */
+    }
+
+    footer {
+        padding: 18px; /* Adjust padding for tablet */
+        font-size: 0.95em; /* Adjust font size for tablet */
+    }
+
+    footer a {
+        font-size: 0.95em; /* Adjust font size for tablet */
+        margin: 0 10px; /* Adjust margin for tablet */
+    }
+}
+
+/* Desktop (1024px and above) */
+@media (min-width: 1024px) {
+    body {
+        grid-template-columns: 1fr; /* Simpler single-column layout for now */
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    nav {
+        border-radius: 25px; /* More rounded on desktop */
+    }
+
+    nav ol {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0 15px; /* Adjust spacing for desktop */
+    }
+
+    nav a {
+        font-size: 1.1em; /* Larger on desktop */
+        padding: 8px 0;
+    }
+
+    h1 {
+        font-size: 2.2em; /* Adjust for desktop */
